@@ -1,0 +1,144 @@
+/* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Arka plan rengi */
+    color: #343a40; /* Metin rengi */
+}
+
+header {
+    background-color: #007bff; /* Header arka plan rengi */
+    color: #fff; /* Header metin rengi */
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff; /* Navigasyon bağlantıları metin rengi */
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #343a40; /* Başlık metin rengi */
+}
+
+.personal-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    float: left;
+    transition: transform 0.3s ease; /* Geçiş efekti */
+}
+
+.personal-info div {
+    overflow: hidden;
+}
+
+.personal-info h3 {
+    color: #343a40; /* Kişisel bilgi başlık metin rengi */
+}
+
+.personal-info p {
+    margin: 10px 0;
+    color: #6c757d; /* Kişisel bilgi paragraf metin rengi */
+}
+
+/* Footer Stili */
+footer {
+    background-color: #343a40; /* Footer arka plan rengi */
+    color: #fff; /* Footer metin rengi */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* CSS Animasyon */
+@keyframes example {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+  
+.image-container img {
+    width: 300px;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    animation: example 1s infinite alternate;
+}
+
+/* Profil fotoğrafı üzerine gelindiğinde */
+.personal-info img:hover {
+    transform: scale(1.1); /* 1.1 kat büyüt */
+}
+
+/* Tüm fotoğrafları görünür hale getir */
+.image-container img {
+    display: block;
+}
+
+/* İlk fotoğraf hariç diğerlerini gizle */
+.image-container img:not(:first-child) {
+    display: none;
+}
+/* CSS */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9); /* arkaplan rengi ve opaklık */
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

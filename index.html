@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benim Web Sayfam</title>
+    <link rel="stylesheet" href="index.css"> <!-- index.css dosyası burada bağlanıyor -->
+    <link rel="stylesheet" href="stil.css"> <!-- stil.css dosyası burada bağlanıyor -->
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Arka plan rengi */
+            color: #343a40; /* Metin rengi */
+        }
+
+        header {
+            background-color: #007bff; /* Header arka plan rengi */
+            color: #fff; /* Header metin rengi */
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff; /* Navigasyon bağlantıları metin rengi */
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #343a40; /* Başlık metin rengi */
+        }
+
+        .personal-info img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+            float: left;
+            transition: transform 0.3s ease; /* Geçiş efekti */
+        }
+
+        .personal-info div {
+            overflow: hidden;
+        }
+
+        .personal-info h3 {
+            color: #343a40; /* Kişisel bilgi başlık metin rengi */
+        }
+
+        .personal-info p {
+            margin: 10px 0;
+            color: #6c757d; /* Kişisel bilgi paragraf metin rengi */
+        }
+
+        /* Footer Stili */
+        footer {
+            background-color: #343a40; /* Footer arka plan rengi */
+            color: #fff; /* Footer metin rengi */
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* CSS Animasyon */
+        @keyframes example {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            animation: example 1s infinite alternate;
+        }
+
+        /* Profil fotoğrafı üzerine gelindiğinde */
+        .personal-info img:hover {
+            transform: scale(1.1); /* 1.1 kat büyüt */
+        }
+
+        /* Tüm fotoğrafları görünür hale getir */
+        .image-container img {
+            display: block;
+        }
+
+        /* İlk fotoğraf hariç diğerlerini gizle */
+        .image-container img:not(:first-child) {
+            display: none;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Arka plan rengi ve opaklık */
+            overflow: auto;
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Benim Web Sayfam</h1>
+        <nav>
+            <ul>
+                <li><a href="#hakkimda">Hakkımda</a></li>
+                <li><a href="#egitim">Eğitim</a></li>
+                <li><a href="#deneyim">Deneyim</a></li>
+                <li><a href="#ilgi-alanlari">İlgi Alanları</a></li>
+                <li><a href="#gorseller">Görseller</a></li>
+                <li><a href="#baglantilar">Bağlantılar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hakkimda">
+            <h2>Hakkımda</h2>
+            <div class="personal-info">
+                <img src="https://i.hizliresim.com/czedscu.jpeg" alt="Profil Resmi" id="profilResmi">
+                <div>
+                    <h3>İsim: Dilara Dilrüba Yıldırım</h3>
+                    <p>Merhaba, ben Dilara Dilrüba Yıldırım. Yazılım geliştirme ve teknolojiye ilgi duyan biriyim. Üniversite eğitimimi Yönetim Bilişim Sistemleri alanında alıyorum 3. sınıf öğrencisiyim. Eğitimim sona erince uygulama geliştiricisi olarak çalışmak istiyorum.</p>
+                    <p>E-posta: dilaradilruba7790@gmail.com</p>
+                    <p>Telefon: +905537119004</p>
+                    <p>Yaşadığım Şehir: Ankara</p>
+                    <p>Doğum Tarihi: 7 Ocak 2002</p>
+                    <p>Hobilerim: Programlama, kitap okuma, tuval boyama</p>
+                    <p>İlgi Alanlarım: Web geliştirme, mobil uygulama geliştirme, veri bilimi</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="egitim">
+            <h2>Eğitim</h2>
+            <p>Yönetim Bilişim Sistemleri Lisans Derecesi - Ankara Medipol Üniversitesi (2021-)</p>
+            <p>Yazılım Geliştirme Sertifikası </p>
+        </section>
+
+        <section id="deneyim">
+            <h2>Deneyim</h2>
+            <p>Henüz okuyorum ve bir deneyimim yok.</p>
+        </section>
+
+        <section id="ilgi-alanlari">
+            <h2>İlgi Alanları</h2>
+            <p>Web geliştirme, yapay zeka, veri bilimi</p>
+        </section>
+
+        <section id="gorseller">
+            <h2>Görseller</h2>
+            <div class="image-container">
+                <img src="https://i.hizliresim.com/735uv2h.jpeg" alt="Proje 1">
+                        <img src="https://i.hizliresim.com/5bcd7r8.jpeg" alt="Proje 2">
+                        <img src="https://i.hizliresim.com/hduqo9e.jpeg" alt="Proje 3">
+                        <img src="https://i.hizliresim.com/at1zchm.jpeg" alt="Proje 4">
+            </div>
+            <button id="changeImageBtn">Fotoğrafı Değiştir</button>
+        </section>
+        
+        <section id="baglantilar">
+            <h2>Bağlantılar</h2>
+            <div class="links">
+                <a href="https://github.com/dilara-yildirim">GitHub</a>
+                <a href="https://www.linkedin.com/in/dilara-dilruba-yıldırım-9115b92aa/">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Telif Hakkı &copy; 2024 Benim Web Sayfam</p>
+    </footer>
+</body>
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Resimlerin ve fotoğrafın listesi
+        const images = [
+            "https://i.hizliresim.com/735uv2h.jpeg",
+            "https://i.hizliresim.com/5bcd7r8.jpeg",
+            "https://i.hizliresim.com/hduqo9e.jpeg",
+            "https://i.hizliresim.com/at1zchm.jpeg"
+        ];
+
+        // Butonu seç
+        const changeImageBtn = document.getElementById("changeImageBtn");
+
+        // Resim container'ını seç
+        const imageContainer = document.querySelector(".image-container");
+
+        // Şu anki fotoğrafın index'ini takip etmek için bir değişken
+        let currentImageIndex = 0;
+
+        // Butona tıklandığında fotoğrafı değiştir
+        changeImageBtn.addEventListener("click", function() {
+            // Şu anki fotoğrafı sakla
+            const currentImage = images[currentImageIndex];
+
+            // Bir sonraki fotoğrafın index'ini al
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+
+            // Yeni fotoğrafı göster
+            imageContainer.innerHTML = `<img src="${images[currentImageIndex]}" alt="Proje ${currentImageIndex + 1}">`;
+        });
+    });
+</script>
+<header>
+    <h1>Resim Galerim</h1>
+</header>
+
+<main>
+    <div class="image-container">
+        <img src="https://i.hizliresim.com/gx9uo99.jpeg" alt="Resim 1">
+        <p class="image-description">Ankara, 2020</p>
+    </div>
+    <div class="image-container">
+        <img src="https://i.hizliresim.com/b99rdga.jpeg" alt="Resim 2">
+        <p class="image-description">İstanbul, 2020</p>
+    </div>
+    <div class="image-container">
+        <img src="https://i.hizliresim.com/90sfi9h.jpeg" alt="Resim 3">
+        <p class="image-description">Tokat, 2021</p>
+    </div>
+    <div class="image-container">
+        <img src="https://i.hizliresim.com/92fiqei.jpeg" alt="Resim 4">
+        <p class="image-description">Ankara, 2023</p>
+    </div>
+</main>
+<div class="lightbox" id="lightbox">
+    <span class="close" id="close">&times;</span>
+    <img class="lightbox-content" id="lightboxImg">
+</div>
+<footer>
+    <p>Telif Hakkı &copy; 2024 Benim Web Sayfam</p>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="close" id="close">&times;</span>
+    <img class="lightbox-content" id="lightboxImg">
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const profileImage = document.getElementById("profilResmi");
+
+        profileImage.addEventListener("click", function() {
+            document.getElementById('lightbox').style.display = 'block';
+            document.getElementById('lightboxImg').src = this.src;
+        });
+
+        document.getElementById('close').addEventListener("click", function() {
+            document.getElementById('lightbox').style.display = 'none';
+        });
+    });
+</script>
+</body>
+</html>
